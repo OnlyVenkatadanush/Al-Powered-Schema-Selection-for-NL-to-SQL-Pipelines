@@ -1,0 +1,1 @@
+{"tables": [{"name": "products", "columns": ["id", "name", "price"]}, {"name": "customers", "columns": ["id", "name", "email"]}, {"name": "orders", "columns": ["id", "customer_id", "product_id", "order_date"]}]}

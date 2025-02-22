@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent SQL</title>
+    <title>AI SQL Wizard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>AI Agent SQL</h1>
+    <main>
+        <!-- Create Database Section -->
+        <section class="card">
+            <h2>📊 <b>Create Database</b></h2>
+            <form id="create-db-form">
+                <input type="text" id="db_name" name="db_name" placeholder="Database Name (e.g., sales_db)" required>
+                <input type="file" id="json_file" name="file" accept=".json" required>
+                <button type="submit">🚀 Create</button>
+            </form>
+            <div id="schema-output" class="output"></div>
+        </section>
 
-    <!-- Section to Create Database -->
-    <section>
-        <h2>Create Database</h2>
-        <form id="create-db-form">
-            <label for="db_name">Database Name:</label>
-            <input type="text" id="db_name" name="db_name" required>
-            <label for="json_file">Upload JSON File:</label>
-            <input type="file" id="json_file" name="file" accept=".json" required>
-            <button type="submit">Create Database</button>
-        </form>
-        <div id="schema-output"></div>
-    </section>
-
-    <!-- Section to Query Database -->
-    <section>
-        <h2>Query Database</h2>
-        <form id="query-form">
-            <label for="query_db_name">Database Name:</label>
-            <input type="text" id="query_db_name" name="db_name" required>
-            <label for="nl_query">Natural Language Query:</label>
-            <input type="text" id="nl_query" name="query" required>
-            <button type="submit">Run Query</button>
-        </form>
-        <div id="query-output"></div>
-        <a id="download-link" href="/download_results" style="display: none;">Download Results</a>
-    </section>
+        <!-- Query Database Section -->
+        <section class="card">
+            <h2>🔎 <b>Query Database</b></h2>
+            <form id="query-form">
+                <input type="text" id="query_db_name" name="db_name" placeholder="Database Name" required>
+                <input type="text" id="nl_query" name="query" placeholder="e.g., Show total sales by region" required>
+                <button type="submit">🪄 Query</button>
+            </form>
+            <div id="query-output" class="output"></div>
+            <div id="download-options" class="download-options">
+                <button id="download-json">📥 JSON</button>
+                <button id="download-yaml">📜 YAML</button>
+            </div>
+        </section>
+    </main>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

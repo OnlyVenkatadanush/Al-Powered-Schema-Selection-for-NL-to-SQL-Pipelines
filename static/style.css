@@ -1,76 +1,167 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://www.bing.com/images/search?view=detailV2&ccid=Smo5%2flN8&id=0F320DA8C68B3ADD3A48A4ACF87A7742F7295916&thid=OIP.Smo5_lN8QARsQPdYadDG7QHaFj&mediaurl=https%3a%2f%2fdsisys.com%2fwp-content%2fuploads%2f2019%2f08%2fImage-depicting-sql-database.jpeg&exph=3000&expw=4000&q=sql+images&simid=608034419438208845&FORM=IRPRST&ck=5DC17A445BCC1B0D3191AB3977925ECE&selectedIndex=28&itb=0') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0; /* Light text */
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeInBackground 2s ease-in; /* Background fade-in animation */
+}
+
+/* Background Animation */
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Main Container */
+main {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
+/* Card Styles */
+.card {
+    background: rgba(42, 42, 60, 0.9); /* Semi-transparent dark card */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.8s ease-out; /* Card slide-in animation */
 }
 
-section {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 h2 {
-    color: #555;
+    color: #00d4ff; /* Cyan accent for headers */
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    font-weight: bold;
-    color: #666;
+    gap: 15px;
 }
 
 input[type="text"],
 input[type="file"] {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #3e3e5e; /* Subtle border */
+    border-radius: 8px;
+    background: #33334d; /* Dark input background */
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #00d4ff;
+    outline: none;
 }
 
 button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
+    padding: 8px 16px; /* Smaller button size */
+    background: #4A4A4A; /* Blackish-grey color */
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 1em;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #5E5E5E; /* Lighter grey on hover */
 }
 
-#schema-output,
-#query-output {
+/* Output Styles */
+.output {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 15px;
+    background: #212130; /* Darker output background */
+    border-radius: 8px;
+    border: 1px solid #3e3e5e;
     white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d0d0ff; /* Light purple text */
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards; /* Fade-in for output */
 }
 
-#download-link {
-    display: block;
-    margin-top: 10px;
-    color: #007BFF;
-    text-decoration: none;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-#download-link:hover {
-    text-decoration: underline;
+/* Download Options */
+.download-options {
+    margin-top: 15px;
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    animation: slideUp 0.5s ease-out; /* Download buttons slide up */
+}
+
+@keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.download-options button {
+    background: #28a745; /* Green for download buttons */
+    padding: 8px 16px;
+}
+
+.download-options button:hover {
+    background: #218838; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    button {
+        font-size: 0.9em;
+    }
+
+    .download-options {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
 }
