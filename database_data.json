@@ -1,0 +1,56 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "price": 999.99
+        },
+        {
+            "id": 2,
+            "name": "Smartphone",
+            "price": 699.99
+        },
+        {
+            "id": 3,
+            "name": "Headphones",
+            "price": 199.99
+        }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "name": "Alice Johnson",
+            "email": "alice@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Bob Smith",
+            "email": "bob@example.com"
+        },
+        {
+            "id": 3,
+            "name": "Charlie Brown",
+            "email": "charlie@example.com"
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "customer_id": 1,
+            "product_id": 2,
+            "order_date": "2025-02-20"
+        },
+        {
+            "id": 2,
+            "customer_id": 2,
+            "product_id": 1,
+            "order_date": "2025-02-21"
+        },
+        {
+            "id": 3,
+            "customer_id": 3,
+            "product_id": 3,
+            "order_date": "2025-02-22"
+        }
+    ]
+}

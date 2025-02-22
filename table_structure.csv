@@ -1,0 +1,4 @@
+TABLE NAMES,COLUMN1,COLUMN2,COLUMN3,COLUMN4
+products,id (INTEGER PRIMARY KEY),name (TEXT NOT NULL),price (REAL NOT NULL),
+orders,id (INTEGER PRIMARY KEY),customer_id (INTEGER),product_id (INTEGER),order_date (TEXT)
+customers,id (INTEGER PRIMARY KEY),name (TEXT NOT NULL),email (TEXT NOT NULL),
