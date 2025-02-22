@@ -19,3 +19,6 @@ Task is to build an Al-driven system that dynamically selects the most relevant 
 6.Robust Error Handling: Checks for API keys, schema availability, invalid files, and query errors.<br>
 7.Efficient API Design: Provides endpoints for database creation, querying, and result download.<br>
 </p>
+<p>
+  we have used ChatGPT for debugging errors faster during the hackathon process
+</p>
