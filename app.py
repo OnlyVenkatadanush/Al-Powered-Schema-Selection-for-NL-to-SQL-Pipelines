@@ -8,7 +8,7 @@ import os
 from sentence_transformers import SentenceTransformer, util
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyBZibOxOsqsstkXcJGrh1VaIyE7c5rx7Ck")  # Replace with your actual API key
+genai.configure(api_key="api_key")  # Replace with your actual API key
 import sqlite3
 import json
 import os
