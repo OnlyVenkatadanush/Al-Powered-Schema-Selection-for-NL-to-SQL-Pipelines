@@ -26,7 +26,7 @@ except ImportError as e:
     print(f"Google Generative AI import error: {e}")
     exit(1)
 
-genai.configure(api_key="AIzaSyBZibOxOsqsstkXcJGrh1VaIyE7c5rx7Ck")  # Replace with your actual API key
+genai.configure(api_key="API key")  # Replace with your actual API key
 generation_config = {"temperature": 0.9, "top_p": 1, "top_k": 1, "max_output_tokens": 2048}
 model = genai.GenerativeModel("gemini-2.0-flash", generation_config=generation_config)
 
